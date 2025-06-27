@@ -10,6 +10,7 @@ CHAT_ID = os.getenv("CHAT_ID")
 @app.route("/sms", methods=["POST"])
 def sms_handler():
     data = request.get_json()
+    print("🛠️ Получен JSON:", data)
     message = data.get("message") or "Пустое сообщение"
 
     text = f"📩 СМС от банка:\n{message}"
