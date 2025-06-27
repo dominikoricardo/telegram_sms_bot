@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: telegram-sms-bot
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python bot_server.py"
+    envVars:
+      - key: BOT_TOKEN
+        value: ВСТАВЬ_ТВОЙ_ТОКЕН_БОТА
+      - key: CHAT_ID
+        value: ВСТАВЬ_ТВОЙ_CHAT_ID
+    plan: free
+    autoDeploy: true
+    region: frankfurt
